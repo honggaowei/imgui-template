@@ -2,19 +2,23 @@ cmake_minimum_required(VERSION 3.10)
 project(imguiTmpl)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_BUILD_TYPE Debug)
 
-include_directories(./lib/glfw-3.3.8/include
-                    ./lib/imgui
-                    ./lib/imgui/backend
+include_directories(lib/glfw-3.3.8/include
+                    lib/imgui
+                    lib/imgui/backend
+                    lib/imnodes
         )
+
+add_subdirectory(lib/imnodes)
+add_subdirectory(lib/imgui)
+
 link_directories(
-        ./lib/glfw-3.3.8/lib
+        lib/glfw-3.3.8/lib
 )
 
-file(GLOB_RECURSE IMGUI_SRCS ./lib/imgui/*.cpp)
-message(${IMGUI_SRCS})
 
 #添加WIN32参数去除控制台界面了
-add_executable(imguiTmpl WIN32 src/main.cpp ${IMGUI_SRCS}) 
-target_link_libraries(imguiTmpl glfw3.a opengl32)
+add_executable(imguiTmpl WIN32 src/main.cpp src/workstation_editor.cpp src/multi_edit.cpp) 
+target_link_libraries(imguiTmpl glfw3.a opengl32 ImGui ImNodes)
 
