@@ -113,10 +113,7 @@ struct ImNodesIO
     {
         EmulateThreeButtonMouse();
 
-        // The keyboard modifier to use in combination with mouse left click to pan the editor view.
-        // Set to NULL by default. To enable this feature, set the modifier to point to a boolean
-        // indicating the state of a modifier. For example,
-        //
+        // 按住功能键时 通过左键移动画布
         // ImNodes::GetIO().EmulateThreeButtonMouse.Modifier = &ImGui::GetIO().KeyAlt;
         const bool* Modifier;
     } EmulateThreeButtonMouse;
@@ -125,15 +122,8 @@ struct ImNodesIO
     {
         LinkDetachWithModifierClick();
 
-        // Pointer to a boolean value indicating when the desired modifier is pressed. Set to NULL
-        // by default. To enable the feature, set the modifier to point to a boolean indicating the
-        // state of a modifier. For example,
-        //
+        // 按住功能键时 通过左键单击断开连线
         // ImNodes::GetIO().LinkDetachWithModifierClick.Modifier = &ImGui::GetIO().KeyCtrl;
-        //
-        // Left-clicking a link with this modifier pressed will detach that link. NOTE: the user has
-        // to actually delete the link for this to work. A deleted link can be detected by calling
-        // IsLinkDestroyed() after EndNodeEditor().
         const bool* Modifier;
     } LinkDetachWithModifierClick;
 
@@ -141,18 +131,12 @@ struct ImNodesIO
     {
         MultipleSelectModifier();
 
-        // Pointer to a boolean value indicating when the desired modifier is pressed. Set to NULL
-        // by default. To enable the feature, set the modifier to point to a boolean indicating the
-        // state of a modifier. For example,
-        //
+        // 默认多选启用案件 为NULL时默认CTRL
         // ImNodes::GetIO().MultipleSelectModifier.Modifier = &ImGui::GetIO().KeyCtrl;
-        //
-        // Left-clicking a node with this modifier pressed will add the node to the list of
-        // currently selected nodes. If this value is NULL, the Ctrl key will be used.
         const bool* Modifier;
     } MultipleSelectModifier;
 
-    // Holding alt mouse button pans the node area, by default middle mouse button will be used
+    // 按住alt键移动画布, 默认使用鼠标中键移动画布
     // Set based on ImGuiMouseButton values
     int AltMouseButton;
 

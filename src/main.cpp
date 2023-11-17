@@ -61,7 +61,7 @@ int main(int, char **)
     glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE); // 设置 offscreen context 的标志位
     glfwWindowHint(GLFW_SAMPLES, 4);          // 4x Samples MSAA.
                                               // glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // 3.2+ only
-    // glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // 3.0+ only
+                                              // glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // 3.0+ only
 #endif
 
     // Create window with graphics context
@@ -87,7 +87,8 @@ int main(int, char **)
     // 微软雅黑字体
     io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\msyh.ttc", 30.0f, nullptr,
                                  io.Fonts->GetGlyphRangesChineseFull());
-    // io.ConfigViewportsNoAutoMerge = true;
+
+    ImNodes::GetIO().EmulateThreeButtonMouse.Modifier = &ImGui::GetIO().KeyCtrl;
     // io.ConfigViewportsNoTaskBarIcon = true;
 
     // Setup Dear ImGui style

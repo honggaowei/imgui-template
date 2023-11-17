@@ -94,7 +94,7 @@ namespace dms_editor
 
 			if (ImGui::BeginPopup(u8"add_new_node"))
 			{
-				ImGui::SeparatorText(u8"New Node");
+				ImGui::SeparatorText(u8"新增节点");
 				ImGui::Spacing();
 				if (ImGui::Selectable("http"))
 				{
@@ -125,7 +125,6 @@ namespace dms_editor
 
 			for (Node& node : editor.nodes)
 			{
-
 				ImNodes::BeginNode(node.id);
 				ImNodes::BeginNodeTitleBar();
 				ImGui::Text(u8"node name");

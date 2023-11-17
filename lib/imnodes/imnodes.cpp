@@ -1991,9 +1991,9 @@ ImNodesIO::ImNodesIO()
 
 ImNodesStyle::ImNodesStyle()
     : GridSpacing(24.f), NodeCornerRounding(4.f), NodePadding(8.f, 8.f), NodeBorderThickness(1.f),
-      LinkThickness(3.f), LinkLineSegmentsPerLength(0.1f), LinkHoverDistance(10.f),
-      PinCircleRadius(4.f), PinQuadSideLength(7.f), PinTriangleSideLength(9.5),
-      PinLineThickness(1.f), PinHoverRadius(10.f), PinOffset(0.f), MiniMapPadding(8.0f, 8.0f),
+      LinkThickness(9.f), LinkLineSegmentsPerLength(0.1f), LinkHoverDistance(10.f),
+      PinCircleRadius(7.f), PinQuadSideLength(7.f), PinTriangleSideLength(9.5),
+      PinLineThickness(5.f), PinHoverRadius(10.f), PinOffset(0.f), MiniMapPadding(8.0f, 8.0f),
       MiniMapOffset(4.0f, 4.0f), Flags(ImNodesStyleFlags_NodeOutline | ImNodesStyleFlags_GridLines),
       Colors()
 {
